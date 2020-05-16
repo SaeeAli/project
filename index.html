@@ -1,52 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
- 
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Task List</title>
+  <link rel="stylesheet" href="style.css" />
+  <title>jQuery Assignment1</title>
 </head>
- 
 <body>
-    <div class="container">
-    <div class="row">
-        <div class="col s12">
-            <div id="main" class="card">
-                <div class="card-content">
-                    <span class="card-title">Task List</span>
-                    <div class="row">
-                        <form id="task-form">
-                            <div class="input-field col s12">
-                                <input type="text" name="task" id="task">
-                                <label for="task">New Task</label>
-                            </div>
-                            <input type="submit" value="Add Task" class="btn">
-                        </form>
-                    </div>
-                </div>
-                <div class="card-action">
-                    <h5 id="task-title">Tasks</h5>
-                    <div class="input-field col s12">
-                        <input type="text" name="filter" id="filter">
-                        <label for="filter">Filter Tasks</label>
-                    </div>
-                    <ul class="collection"></ul>
-                    <a href="#" class="clear-tasks btn black">Clear Tasks</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
- 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- 
-    <script src="app.js"></script>
+  <header>
+    <nav id="navbar">
+      <div class="container">
+        <h1>jQuery</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <div id="input">
+    <input type="button" value="Hide" id="btnHide" />
+    <input type="button" value="Show" id="btnShow" />
+    <input type="button" value="Toggle" id="btnToggle" />
+    <input type="button" value="Fade Out" id="btnFadeOut" />
+    <input type="button" value="Fade In" id="btnFadeIn" />
+    <input type="button" value="Fade Toggle" id="btnFadeToggle" />
+    <input type="button" value="Fade To" id="btnFadeTo" />
+    <input type="button" value="Slide Up" id="btnSlideUp" />
+    <input type="button" value="Slide Down" id="btnSlideDown" />
+    <input type="button" value="Slide Toggle" id="btnSlideToggle" />
+    <input type="button" value="Animate" id="btnAnimate" />
+    <input type="button" value="Stop" id="btnStop" />
+  </div>
+    <p id="p1">jQuery is amazing</p>
+    <p>This is my first assignment in jQuery.</p>
+
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#btnHide').click(function(){
+          $('p').hide(1000)
+        })
+        
+        $('#btnShow').click(function(){
+          $('p').show(1000)
+        })
+        
+        $('#btnToggle').click(function(){
+          $('p').toggle(1000)
+        })
+        
+        $('#btnFadeOut').click(function(){
+          $('p').fadeOut(1000)
+        })
+        
+        $('#btnFadeIn').click(function(){
+          $('p').fadeIn(1000)
+        })
+        
+        $('#btnFadeToggle').click(function(){
+          $('p').fadeToggle(1000)
+        })
+        
+        $('#btnFadeTo').click(function(){
+          $('p').fadeTo(200 , 0.2)
+        })
+        
+        $('#btnSlideUp').click(function(){
+          $('p').slideUp(1000)
+        })
+        
+        $('#btnSlideDown').click(function(){
+          $('p').slideDown(1000)
+        })
+        
+        $('#btnSlideToggle').click(function(){
+          $('p').slideToggle(1000)
+        })
+        
+        $('#btnAnimate').click(function(){
+          $('#p1').animate({'left':'200px' , 'top' : '300px' , 'fontSize':'48pt' , 'width' : '800px' } , 5000)
+              .animate({'left':'400px' , 'top' : '-200px' , 'fontSize':'24pt' , 'width' : 'toggle'} , 1000)
+              .animate({'left':'200px' , 'top' : '100px' , 'fontSize':'12pt' } , 1000)
+              .animate({'hight':'400px' , 'width' : '100px' , 'fontSize':'12pt' } , 1000)
+        
+        })
+        
+        $('#btnStop').click(function(){
+          $('#p1').stop(true , true);
+        })
+      })
+    </script>
+
 </body>
- 
 </html>
